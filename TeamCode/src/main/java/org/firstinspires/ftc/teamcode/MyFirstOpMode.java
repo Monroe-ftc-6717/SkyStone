@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class MyFirstOpMode extends OpMode {
 
     DcMotor fl, fr, bl, br;
-    private static double[] Direction = {0,0}; // Forward/Backward 0, Left/Right 1
+    private static double[] Direction = {0,0}; // Vertical Movement 0, Horizontal Movement 1
     private static double Turn = 0;
 
     @Override
