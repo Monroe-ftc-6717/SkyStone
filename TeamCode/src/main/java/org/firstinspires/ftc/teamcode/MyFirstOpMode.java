@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
@@ -79,16 +78,16 @@ public class MyFirstOpMode extends OpMode {
     public void loop() { telemetry.addData("Status", "Run Time: " + runtime.toString());
 
 
-        if(true) {
-            fl.setPower(gamepad1.left_stick_y);
-            fr.setPower(gamepad1.right_stick_y);
-            bl.setPower(gamepad1.left_stick_y);
-            br.setPower(gamepad1.right_stick_y);
-        }if(true) {
-            fl.setPower(-gamepad1.left_stick_x);
-            fr.setPower(-gamepad1.right_stick_x);
-            bl.setPower(gamepad1.left_stick_x);
-            br.setPower(gamepad1.right_stick_x);
+        if(true) {// tank
+            flp=gamepad1.left_stick_y;
+            frp=-gamepad1.right_stick_y;
+            blp=gamepad1.left_stick_y;
+            brp=-gamepad1.right_stick_y;
+        }if(true) { // LEFT/RIGHT
+            flp+=gamepad1.left_stick_x;
+            frp+=gamepad1.right_stick_x;
+            blp-=gamepad1.left_stick_x;
+            brp-=gamepad1.right_stick_x;
         }
         fl.setPower(flp);
         fr.setPower(frp);
